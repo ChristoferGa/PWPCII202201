@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', author: 'Author Gallo Gutiérrez Christofer' });
+  res.render('index', { title: 'Express', author: 'Author Gallo Gutiérrez Christofer', babel: 'Babel is running' });
 });
 
 /* First Exercise */
