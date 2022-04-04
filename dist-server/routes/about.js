@@ -1,13 +1,1 @@
-"use strict";
-
-var express = require('express');
-
-var router = express.Router();
-/* GET home page. */
-
-router.get('/', function (req, res, next) {
-  res.render('about', {
-    about: 'This is about us'
-  });
-});
-module.exports = router;
+"use strict";var express=require("express"),router=express.Router();/* GET home page. */router.get("/",function(a,b){b.render("about",{about:"This is about us"})}),module.exports=router;

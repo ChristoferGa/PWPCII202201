@@ -1,87 +1,15 @@
 #!/usr/bin/env node
-
 /**
  * Module dependencies.
- */
-"use strict";
-
-var app = require('../app');
-
-var debug = require('debug')('projnotes:server');
-
-var http = require('http');
-/**
- * Get port from environment and store in Express.
- */
-
-
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-/**
+ */"use strict";var app=require("../app"),debug=require("debug")("projnotes:server"),http=require("http"),port=normalizePort(process.env.PORT||"3000");app.set("port",port);/**
  * Create HTTP server.
- */
-
-var server = http.createServer(app);
-/**
+ */var server=http.createServer(app);/**
  * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-/**
+ */server.listen(port),server.on("error",onError),server.on("listening",onListening);/**
  * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-/**
+ */function normalizePort(a){var b=parseInt(a,10);return isNaN(b)?a:!!(0<=b)&&b}/**
  * Event listener for HTTP server "error" event.
- */
-
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port; // handle specific listen errors with friendly messages
-
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-
-    default:
-      throw error;
-  }
-}
-/**
+ */function onError(a){if("listen"!==a.syscall)throw a;var b="string"==typeof port?"Pipe "+port:"Port "+port;// handle specific listen errors with friendly messages
+switch(a.code){case"EACCES":console.error(b+" requires elevated privileges"),process.exit(1);break;case"EADDRINUSE":console.error(b+" is already in use"),process.exit(1);break;default:throw a;}}/**
  * Event listener for HTTP server "listening" event.
- */
-
-
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
+ */function onListening(){var a=server.address(),b="string"==typeof a?"pipe "+a:"port "+a.port;debug("Listening on "+b)}

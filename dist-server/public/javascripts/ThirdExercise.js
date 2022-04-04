@@ -1,3 +1,1 @@
-"use strict";
-
-alert('This is the third exercise');
+"use strict";alert("This is the third exercise");
